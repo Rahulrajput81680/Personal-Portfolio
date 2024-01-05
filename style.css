@@ -527,7 +527,7 @@ nav ul li a:hover {
 
 .skillFadedText {
   font-size: 12em;
-  right: -9%;
+  right: 5%;
   bottom: -35%;
   user-select: none;
   color: #e7e7e7;
