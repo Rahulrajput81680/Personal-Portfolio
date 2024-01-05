@@ -39,6 +39,9 @@ header .logo img {
   margin-left: -0.8rem;
   font-size: 28px;
 }
+.m-logoText{
+  display: none;
+}
 
 nav ul {
   display: flex;
@@ -92,9 +95,10 @@ nav ul li a:hover {
   user-select: none;
   font-size: 6em;
   color: #e7e7e7;
-  bottom: -16%;
+  bottom: -5%;
   left: 0;
   font-weight: bold;
+  /* color: black; */
 }
 
 .absolute {
