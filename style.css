@@ -15,6 +15,11 @@
   scroll-behavior: smooth;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Header Start  */
 header {
   width: 100%;
@@ -81,7 +86,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 1200px;
+  width: min(1200px, calc(100% - 2rem));
 }
 
 .infoContainer {
@@ -306,23 +311,15 @@ nav ul li a:hover {
 }
 
 #project1 {
-  background-image: url(./Images/projects/Project1.png);
   right: 5%;
 }
 
 #project2 {
-  background-image: url(./Images/projects/Project2.png);
   left: 5%;
 }
 
 #project3 {
-  background-image: url(./Images/projects/Project3.png);
   right: 5%;
-}
-
-#project4 {
-  background-image: url(./Images/projects/Project4.png);
-  left: 5%;
 }
 
 .projectCard {
@@ -330,9 +327,17 @@ nav ul li a:hover {
   height: 550px;
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 14px;
   position: relative;
   box-shadow: 0px 0px 40px #1f1f1f;
   margin: 2rem auto;
+  z-index: 2;
+  overflow: hidden;
+}
+.project-image{
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
   z-index: 2;
 }
 
@@ -343,7 +348,7 @@ nav ul li a:hover {
   bottom: 0;
   right: 0;
   left: 0;
-  background: linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.5));
   z-index: 1;
   transition: 0.5s all;
   transform-origin: left;
@@ -356,26 +361,24 @@ nav ul li a:hover {
 
 .projectNumber {
   position: absolute;
-  font-size: 200px;
-  font-weight: 600;
-  color: #fff;
-  display: none;
+  font-size: clamp(4.2rem, 10vw, 8.5rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  display: block;
   z-index: 10;
   transition: 0.8s;
+  line-height: 1;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 .rightNumber {
-  top: -45px;
-  right: -45px;
+  top: 14px;
+  right: 16px;
 }
 
 .leftNumber {
-  top: -45px;
-  left: -45px;
-}
-
-.projectCard:hover .projectNumber {
-  display: block;
+  top: 14px;
+  left: 16px;
 }
 
 .projectCard::after {
@@ -385,7 +388,7 @@ nav ul li a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #1f1f1f9a;
+  background-color: rgba(0, 0, 0, 0.34);
   z-index: 0;
 }
 
@@ -394,11 +397,12 @@ nav ul li a:hover {
   flex-direction: column;
   gap: 1rem;
   color: white;
-  padding: 2em;
-  bottom: 20%;
+  padding: 2rem;
+  bottom: 0;
   position: absolute;
   z-index: 5;
   transition: all 0.4s;
+  max-width: 78%;
 }
 
 .leftProjectContent {
@@ -422,17 +426,19 @@ nav ul li a:hover {
 .projectHeading {
   font-size: 50px;
   font-weight: bold;
-  line-height: 3rem;
+  line-height: 1.05;
 }
 
 .projectSubHeading {
-  font-size: 16px;
-  font-style: italic;
-  width: 70%;
+  font-size: 17px;
+  font-style: normal;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 760px;
 }
 
 .projectCard:hover .projectContent {
-  transform: scale(1.1);
+  transform: translateY(-6px);
 }
 
 .btnGroup {
@@ -444,6 +450,11 @@ nav ul li a:hover {
 .btnGroup .btnProject {
   border: none;
   outline: none;
+}
+
+.btnProject {
+  text-decoration: none;
+  color: #111;
 }
 .icon {
   cursor: pointer;
@@ -545,6 +556,7 @@ nav ul li a:hover {
 
 .container {
   max-width: 1200px;
+  width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
